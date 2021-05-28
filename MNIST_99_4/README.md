@@ -68,56 +68,73 @@ Network GAP and Transition Layer without FC: **Model parameters**
 
 ## Training the models
 
+Vanilla Network is trained with 2 different batch size, 3 different types of learning rates, 2 different data augmentation.
+
 |Model Name|No. of Parameters|Learning Rate Scheduler|Data Augmentation|Batch Size|Training Accuracy|Test Accuracy|
 |----------|-----------------|-----------------------|-----------------|----------|-----------------|-------------|
-|Batch Norm + FC + GAP|9,186|None|None|64|||
-|Batch Norm + FC + Dropout + GAP|9,178|None|None|64|||
-|Batch Norm + FC + Transition + GAP|9,320|None|None|64|||
-|Batch Norm + Transition + GAP|9,210|None|None|64|||
-|Batch Norm + FC + GAP|9,186|StepLR|None|64|||
-|Batch Norm + FC + Dropout + GAP|9,178|StepLR|None|64|||
-|Batch Norm + FC + Transition + GAP|9,320|StepLR|None|64|||
-|Batch Norm + Transition + GAP|9,210|StepLR|None|64|||
-|Batch Norm + FC + GAP|9,186|ReduceLROnPlateau|None|64|||
-|Batch Norm + FC + Dropout + GAP|9,178|ReduceLROnPlateau|None|64|||
-|Batch Norm + FC + Transition + GAP|9,320|ReduceLROnPlateau|None|64|||
-|Batch Norm + Transition + GAP|9,210|ReduceLROnPlateau|None|64|||
-|Batch Norm + FC + GAP|9,186|None|Rotation + Affine + Color Jitter|64|||
-|Batch Norm + FC + Dropout + GAP|9,178|None|Rotation + Affine + Color Jitter|64|||
-|Batch Norm + FC + Transition + GAP|9,320|None|Rotation + Affine + Color Jitter|64|||
-|Batch Norm + Transition + GAP|9,210|None|Rotation + Affine + Color Jitter|64|||
-|Batch Norm + FC + GAP|9,186|StepLR|Rotation + Affine + Color Jitter|64|||
-|Batch Norm + FC + Dropout + GAP|9,178|StepLR|Rotation + Affine + Color Jitter|64|||
-|Batch Norm + FC + Transition + GAP|9,320|StepLR|Rotation + Affine + Color Jitter|64|||
-|Batch Norm + Transition + GAP|9,210|StepLR|Rotation + Affine + Color Jitter|64|||
-|Batch Norm + FC + GAP|9,186|ReduceLROnPlateau|Rotation + Affine + Color Jitter|64|||
-|Batch Norm + FC + Dropout + GAP|9,178|ReduceLROnPlateau|Rotation + Affine + Color Jitter|64|||
-|Batch Norm + FC + Transition + GAP|9,320|ReduceLROnPlateau|Rotation + Affine + Color Jitter|64|||
-|Batch Norm + Transition + GAP|9,210|ReduceLROnPlateau|Rotation + Affine + Color Jitter|64|||
-|Batch Norm + FC + GAP|9,186|None|None|128|||
-|Batch Norm + FC + Dropout + GAP|9,178|None|None|128|||
-|Batch Norm + FC + Transition + GAP|9,320|None|None|128|||
-|Batch Norm + Transition + GAP|9,210|None|None|128|||
-|Batch Norm + FC + GAP|9,186|StepLR|None|128|||
-|Batch Norm + FC + Dropout + GAP|9,178|StepLR|None|128|||
-|Batch Norm + FC + Transition + GAP|9,320|StepLR|None|128|||
-|Batch Norm + Transition + GAP|9,210|StepLR|None|128|||
-|Batch Norm + FC + GAP|9,186|ReduceLROnPlateau|None|128|||
-|Batch Norm + FC + Dropout + GAP|9,178|ReduceLROnPlateau|None|128|||
-|Batch Norm + FC + Transition + GAP|9,320|ReduceLROnPlateau|None|128|||
-|Batch Norm + Transition + GAP|9,210|ReduceLROnPlateau|None|128|||
-|Batch Norm + FC + GAP|9,186|None|Rotation + Affine + Color Jitter|128|||
-|Batch Norm + FC + Dropout + GAP|9,178|None|Rotation + Affine + Color Jitter|128|||
-|Batch Norm + FC + Transition + GAP|9,320|None|Rotation + Affine + Color Jitter|128|||
-|Batch Norm + Transition + GAP|9,210|None|Rotation + Affine + Color Jitter|128|||
-|Batch Norm + FC + GAP|9,186|StepLR|Rotation + Affine + Color Jitter|128|||
-|Batch Norm + FC + Dropout + GAP|9,178|StepLR|Rotation + Affine + Color Jitter|128|||
-|Batch Norm + FC + Transition + GAP|9,320|StepLR|Rotation + Affine + Color Jitter|128|||
-|Batch Norm + Transition + GAP|9,210|StepLR|Rotation + Affine + Color Jitter|128|||
-|Batch Norm + FC + GAP|9,186|ReduceLROnPlateau|Rotation + Affine + Color Jitter|128|||
-|Batch Norm + FC + Dropout + GAP|9,178|ReduceLROnPlateau|Rotation + Affine + Color Jitter|128|||
-|Batch Norm + FC + Transition + GAP|9,320|ReduceLROnPlateau|Rotation + Affine + Color Jitter|128|||
-|Batch Norm + Transition + GAP|9,210|ReduceLROnPlateau|Rotation + Affine + Color Jitter|128|||
+|Batch Norm + FC + GAP|9186|None|None|64|99.34|99.08|
+|Batch Norm + FC + GAP|9186|StepLR|None|64|99.65|99.27|
+|Batch Norm + FC + GAP|9186|ReduceLROnPlateau|None|64|99.24|99.12|
+|Batch Norm + FC + GAP|9186|None|Rotation + Affine + Color Jitter|64|98.39|99.35|
+|Batch Norm + FC + GAP|9186|StepLR|Rotation + Affine + Color Jitter|64|98.52|99.37|
+|Batch Norm + FC + GAP|9186|ReduceLROnPlateau|Rotation + Affine + Color Jitter|64|98.52|99.33|
+|Batch Norm + FC + GAP|9186|None|None|128|99.37|99.05|
+|Batch Norm + FC + GAP|9186|StepLR|None|128|99.54|99.2|
+|Batch Norm + FC + GAP|9186|ReduceLROnPlateau|None|128|99.35|99.12|
+|Batch Norm + FC + GAP|9186|None|Rotation + Affine + Color Jitter|128|98.22|99.19|
+|Batch Norm + FC + GAP|9186|StepLR|Rotation + Affine + Color Jitter|128|98.41|99.37|
+|Batch Norm + FC + GAP|9186|ReduceLROnPlateau|Rotation + Affine + Color Jitter|128|98.41|99.3|
+
+Network with dropout is trained with 2 different batch size, 3 different types of learning rates, 2 different data augmentation.
+
+|Model Name|No. of Parameters|Learning Rate Scheduler|Data Augmentation|Batch Size|Training Accuracy|Test Accuracy|
+|----------|-----------------|-----------------------|-----------------|----------|-----------------|-------------|
+|Batch Norm + FC + Dropout + GAP|9178|None|None|64|99.11|99.14|
+|Batch Norm + FC + Dropout + GAP|9178|StepLR|None|64|99.45|99.18|
+|Batch Norm + FC + Dropout + GAP|9178|ReduceLROnPlateau|None|64|99.1|99.3|
+|Batch Norm + FC + Dropout + GAP|9178|None|Rotation + Affine + Color Jitter|64|98.13|99.27|
+|Batch Norm + FC + Dropout + GAP|9178|StepLR|Rotation + Affine + Color Jitter|64|98.62|**99.44**|
+|Batch Norm + FC + Dropout + GAP|9178|ReduceLROnPlateau|Rotation + Affine + Color Jitter|64|98.37|99.29|
+|Batch Norm + FC + Dropout + GAP|9178|None|None|128|99.2|99.16|
+|Batch Norm + FC + Dropout + GAP|9178|StepLR|None|128|99.2|99.14|
+|Batch Norm + FC + Dropout + GAP|9178|ReduceLROnPlateau|None|128|99.15|99.16|
+|Batch Norm + FC + Dropout + GAP|9178|None|Rotation + Affine + Color Jitter|128|98.36|99.27|
+|Batch Norm + FC + Dropout + GAP|9178|StepLR|Rotation + Affine + Color Jitter|128|98.49|99.35|
+|Batch Norm + FC + Dropout + GAP|9178|ReduceLROnPlateau|Rotation + Affine + Color Jitter|128|98.05|99.31|
+
+Network with GAP and transition layer is trained with 2 different batch size, 3 different types of learning rates, 2 different data augmentation.
+
+|Model Name|No. of Parameters|Learning Rate Scheduler|Data Augmentation|Batch Size|Training Accuracy|Test Accuracy|
+|----------|-----------------|-----------------------|-----------------|----------|-----------------|-------------|
+|Batch Norm + FC + Transition + GAP|9320|None|None|64|99.17|99.28|
+|Batch Norm + FC + Transition + GAP|9320|StepLR|None|64|99.47|99.3|
+|Batch Norm + FC + Transition + GAP|9320|ReduceLROnPlateau|None|64|99.37|99.43|
+|Batch Norm + FC + Transition + GAP|9320|None|Rotation + Affine + Color Jitter|64|98.46|99.32|
+|Batch Norm + FC + Transition + GAP|9320|StepLR|Rotation + Affine + Color Jitter|64|98.75|**99.48**|
+|Batch Norm + FC + Transition + GAP|9320|ReduceLROnPlateau|Rotation + Affine + Color Jitter|64|98.35|99.35|
+|Batch Norm + FC + Transition + GAP|9320|None|None|128|99.28|99.25|
+|Batch Norm + FC + Transition + GAP|9320|StepLR|None|128|99.27|99.27|
+|Batch Norm + FC + Transition + GAP|9320|ReduceLROnPlateau|None|128|99.22|99.3|
+|Batch Norm + FC + Transition + GAP|9320|None|Rotation + Affine + Color Jitter|128|98.39|99.23|
+|Batch Norm + FC + Transition + GAP|9320|StepLR|Rotation + Affine + Color Jitter|128|98.69|99.36|
+|Batch Norm + FC + Transition + GAP|9320|ReduceLROnPlateau|Rotation + Affine + Color Jitter|128|98.14|99.14|
+
+Network with GAP and transition layer without FC is trained with 2 different batch size, 3 different types of learning rates, 2 different data augmentation.
+
+|Model Name|No. of Parameters|Learning Rate Scheduler|Data Augmentation|Batch Size|Training Accuracy|Test Accuracy|
+|----------|-----------------|-----------------------|-----------------|----------|-----------------|-------------|
+|Batch Norm + Transition + GAP|9210|None|None|64|99.28|99.34|
+|Batch Norm + Transition + GAP|9210|StepLR|None|64|99.51|99.35|
+|Batch Norm + Transition + GAP|9210|ReduceLROnPlateau|None|64|99.34|99.26|
+|Batch Norm + Transition + GAP|9210|None|Rotation + Affine + Color Jitter|64|98.31|99.39|
+|Batch Norm + Transition + GAP|9210|StepLR|Rotation + Affine + Color Jitter|64|98.67|**99.54**|
+|Batch Norm + Transition + GAP|9210|ReduceLROnPlateau|Rotation + Affine + Color Jitter|64|98.41|99.32|
+|Batch Norm + Transition + GAP|9210|None|None|128|99.3|99.28|
+|Batch Norm + Transition + GAP|9210|StepLR|None|128|99.48|99.35|
+|Batch Norm + Transition + GAP|9210|ReduceLROnPlateau|None|128|99.23|99.24|
+|Batch Norm + Transition + GAP|9210|None|Rotation + Affine + Color Jitter|128|98.21|99.24|
+|Batch Norm + Transition + GAP|9210|StepLR|Rotation + Affine + Color Jitter|128|98.57|99.36|
+|Batch Norm + Transition + GAP|9210|ReduceLROnPlateau|Rotation + Affine + Color Jitter|128|98.42|99.36|
 
 ## Results observed
 
