@@ -74,6 +74,32 @@ Network GAP and Transition Layer without FC: **Model parameters**
 
 ![n3param](./../images/network3_parameters.png)
 
+### Reduced Parameter Network - With 2 MaxPools + BatchNorm + GAP + Fully Connected (+DropOut)
+
+![n4param](./../images/network4.png)
+
+The Structure uses less parameters, by reducing the number of kernels, to 8 Kernels for all layers, and 16 Kernels for last layer. The model now has 2 Max Pool layers, reducing size from 28x28 to 14x14 and from 14x14 to 7x7 preeced/followed by atleast 2 convolutions layers.  
+A Global Average Pooling is introduced to convert 3x3 to 1x1, and is followed bya full connected classifier to predict the final output.
+
+Another variant of this model was using Drop out of 3-5% after each convolutional layer to create regularization and reduce overfitting.
+
+![n3param](./../images/network4_parameters.png)
+
+### Reduced Parameter Network - With 1 MaxPools + BatchNorm + GAP + Fully Connected (+DropOut)
+
+![n4param](./../images/network5.png)
+
+The Structure uses less parameters and same as above. But the model now has only 1 Max Pool layers, reducing size from 28x28 to 14x14 followed by a series of convolutions layers, bring size from 14x14 to 6x6 using 4 convolution layers.  
+A Global Average Pooling is introduced to convert 6x6 to 1x1, and is followed bya full connected classifier to predict the final output.
+
+The 2 Max Pool was reduced to 1 Max Pool, so that the GAP is applied on a relatively bigger channel size of 6x6 rather than a 3x3.
+
+Another variant of this model was using Drop out of 3-5% after each convolutional layer to create regularization and reduce overfitting.
+
+![n3param](./../images/network5_parameters.png)
+
+
+
 ## Training the models
 
 ### Vanilla Network
@@ -184,7 +210,7 @@ Trained with 2 different LR schedulers and no LR scheduler along with different 
 
 ## Results observed
 
-We tried with 6 different architectures to train 60 different models. We observed the best result of 99.54% validation accuracy when we trained the model with batch size of 64, along with StepLR and Data Augmentation of Rotation, Affine Transformation and Color Jitter and considered Batch Normalization, GAP, Dropout and Transition. This model didn't have a Fully Connected layer. The following are the reasons why we think that we achieved the best accuracy using this network:
+We tried with 6 different architectures to train 60 different models. We observed the best result of 99.57% validation accuracy when we trained the model with batch size of 64, along with StepLR and Data Augmentation of Rotation, Affine Transformation and Color Jitter and considered Batch Normalization, GAP, Dropout, Transition and a Fully Connected Layer. The following are the reasons why we think that we achieved the best accuracy using this network:
 
 1. With 64 batch size, the number of back propagations that are executed is high. This helps the model learn faster. 
 2. With Data Augmentation, it helps in improving the data diversity.
