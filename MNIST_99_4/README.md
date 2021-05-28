@@ -76,14 +76,14 @@ Network GAP and Transition Layer without FC: **Model parameters**
 
 ### Reduced Parameter Network - With 2 MaxPools + BatchNorm + GAP + Fully Connected (+DropOut)
 
-![n4param](./../images/networ_k4.png)
+![n4param](./../images/network_4.png)
 
 The Structure uses less parameters, by reducing the number of kernels, to 8 Kernels for all layers, and 16 Kernels for last layer. The model now has 2 Max Pool layers, reducing size from 28x28 to 14x14 and from 14x14 to 7x7 preeced/followed by atleast 2 convolutions layers.  
 A Global Average Pooling is introduced to convert 3x3 to 1x1, and is followed bya full connected classifier to predict the final output.
 
 Another variant of this model was using Drop out of 3-5% after each convolutional layer to create regularization and reduce overfitting.
 
-![n3param](./../images/network4_parameters.png)
+![n3param](./../images/network4a_parameters.png)
 
 ### Reduced Parameter Network - With 1 MaxPools + BatchNorm + GAP + Fully Connected (+DropOut)
 
@@ -96,7 +96,7 @@ The 2 Max Pool was reduced to 1 Max Pool, so that the GAP is applied on a relati
 
 Another variant of this model was using Drop out of 3-5% after each convolutional layer to create regularization and reduce overfitting.
 
-![n3param](./../images/network5_parameters.png)
+![n3param](./../images/network5a_parameters.png)
 
 
 
