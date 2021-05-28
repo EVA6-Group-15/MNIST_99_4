@@ -8,8 +8,9 @@ The activity that was performed using MNIST data was to achieve a validation acc
 
 View the notebooks:
 
-1. [Notebook 1](https://colab.research.google.com/drive/14hxzm69jwB4IJEs5CJsVQteCtp7BtqJ7?usp=sharing)
-2. [Notebook 2]
+1. [Multiple Model - Notebook 1](https://colab.research.google.com/drive/14hxzm69jwB4IJEs5CJsVQteCtp7BtqJ7?usp=sharing)
+2. [Multiple Model - Notebook 2](https://colab.research.google.com/drive/1Od4xQPigRzRkHGjwTnoJHhlp4BTCZ65q?usp=sharing)
+3. [Final Notebook](https://colab.research.google.com/drive/1fHDkcUkhyXATQ48k6vQrXqT2e2-fQ28N?usp=sharing)
 
 Below we have explained in detail on how we achieved the goal and what was our findings as much detailed possible for us.
 
