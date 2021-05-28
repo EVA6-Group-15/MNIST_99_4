@@ -4,6 +4,11 @@
 
 The activity that was performed using MNIST data was to achieve a validation accuracy of atleast 99.4% within 20 epochs of training the model and ensuring the number of parameters are less than 20,000. The purpose of this activity was to understand how we can consider different types of network architectures, considering different loss functions can help us achieve the desired result.
 
+## Implementation - link to Colab notebooks
+View the notebooks:
+1. [Notebook 1](https://colab.research.google.com/drive/14hxzm69jwB4IJEs5CJsVQteCtp7BtqJ7?usp=sharing)
+2. [Notebook 2]
+
 Below we have explained in detail on how we achieved the goal and what was our findings as much detailed possible for us.
 
 ## Network Architectures Used
@@ -143,4 +148,3 @@ Trained with 2 different batch size, 3 different types of learning rates, 2 diff
 
 ## Results observed
 
-## Our Findings
