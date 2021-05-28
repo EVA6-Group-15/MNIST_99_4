@@ -5,7 +5,9 @@
 The activity that was performed using MNIST data was to achieve a validation accuracy of atleast 99.4% within 20 epochs of training the model and ensuring the number of parameters are less than 20,000. The purpose of this activity was to understand how we can consider different types of network architectures, considering different loss functions can help us achieve the desired result.
 
 ## Implementation - link to Colab notebooks
+
 View the notebooks:
+
 1. [Notebook 1](https://colab.research.google.com/drive/14hxzm69jwB4IJEs5CJsVQteCtp7BtqJ7?usp=sharing)
 2. [Notebook 2]
 
@@ -33,7 +35,7 @@ Vanilla Network: **Model parameters**
 
 Network With Dropout: **Architecture Diagram**
 
-![n4arch](./../images/network_1.png)
+![n4arch](./../images/network_4.png)
 
 In the network architecture, most of the structure is similar to the Vanilla network architecture. The difference between the two network is that, after the first layer, instead of having a batch normalization, we used a dropout. The reason why dropout was used here is that, the number of pixels is pretty high and the information is spread out. Loosing few pixels from the input data acts in some format like a data augmentation strategy.
 
@@ -41,13 +43,13 @@ The detailed number of parameters that are being used in the Network are listed 
 
 Network With Dropout: **Model parameters**
 
-![n4param](./../images/network1_parameters.png)
+![n4param](./../images/network4_parameters.png)
 
 ### Network - With GAP and Transition Layer
 
 Network With GAP and Transition Layer: **Architecture Diagram**
 
-![n2arch](./../images/network_1.png)
+![n2arch](./../images/network_2.png)
 
 In the network architecture, most of the structure is similar to the network with dropout architecture. We also added a transition block after the last convolution layer to reduce the usage on a fully connected layer.
 
@@ -55,13 +57,13 @@ The detailed number of parameters that are being used in the Network are listed 
 
 Network With GAP and Transition Layer: **Model parameters**
 
-![n2param](./../images/network1_parameters.png)
+![n2param](./../images/network2_parameters.png)
 
 ### Network - With GAP and Transition Layer without FC
 
 Network GAP and Transition Layer without FC: **Architecture Diagram**
 
-![n3arch](./../images/network_1.png)
+![n3arch](./../images/network_3.png)
 
 In the network architecture, most of the structure is similar to the network with GAP and transition layer architecture. We removed the fully connected layer to try how a fully convolutional layer would behave.
 
@@ -69,11 +71,12 @@ The detailed number of parameters that are being used in the Network are listed 
 
 Network GAP and Transition Layer without FC: **Model parameters**
 
-![n3param](./../images/network1_parameters.png)
+![n3param](./../images/network3_parameters.png)
 
 ## Training the models
 
 ### Vanilla Network
+
 Trained with 2 different batch size, 3 different types of learning rates, 2 different data augmentation.
 
 |Model Name|No. of Parameters|Learning Rate Scheduler|Data Augmentation|Batch Size|Training Accuracy|Test Accuracy|
@@ -91,7 +94,8 @@ Trained with 2 different batch size, 3 different types of learning rates, 2 diff
 |Batch Norm + FC + GAP|9186|StepLR|Rotation + Affine + Color Jitter|128|98.41|99.37|
 |Batch Norm + FC + GAP|9186|ReduceLROnPlateau|Rotation + Affine + Color Jitter|128|98.41|99.3|
 
-### Network with dropout 
+### Network with dropout
+
 Trained with 2 different batch size, 3 different types of learning rates, 2 different data augmentation.
 
 |Model Name|No. of Parameters|Learning Rate Scheduler|Data Augmentation|Batch Size|Training Accuracy|Test Accuracy|
@@ -109,7 +113,8 @@ Trained with 2 different batch size, 3 different types of learning rates, 2 diff
 |Batch Norm + FC + Dropout + GAP|9178|StepLR|Rotation + Affine + Color Jitter|128|98.49|99.35|
 |Batch Norm + FC + Dropout + GAP|9178|ReduceLROnPlateau|Rotation + Affine + Color Jitter|128|98.05|99.31|
 
-### Network with GAP and transition layer + FC 
+### Network with GAP and transition layer + FC
+
 Trained with 2 different batch size, 3 different types of learning rates, 2 different data augmentation.
 
 |Model Name|No. of Parameters|Learning Rate Scheduler|Data Augmentation|Batch Size|Training Accuracy|Test Accuracy|
@@ -127,8 +132,8 @@ Trained with 2 different batch size, 3 different types of learning rates, 2 diff
 |Batch Norm + FC + Transition + GAP|9320|StepLR|Rotation + Affine + Color Jitter|128|98.69|99.36|
 |Batch Norm + FC + Transition + GAP|9320|ReduceLROnPlateau|Rotation + Affine + Color Jitter|128|98.14|99.14|
 
-
 ### Network with GAP and transition layer without FC
+
 Trained with 2 different batch size, 3 different types of learning rates, 2 different data augmentation.
 
 |Model Name|No. of Parameters|Learning Rate Scheduler|Data Augmentation|Batch Size|Training Accuracy|Test Accuracy|
@@ -147,4 +152,3 @@ Trained with 2 different batch size, 3 different types of learning rates, 2 diff
 |Batch Norm + Transition + GAP|9210|ReduceLROnPlateau|Rotation + Affine + Color Jitter|128|98.42|99.36|
 
 ## Results observed
-
