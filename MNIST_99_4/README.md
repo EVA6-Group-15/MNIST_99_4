@@ -122,7 +122,7 @@ Trained with 2 different batch size, 3 different types of learning rates, 2 diff
 |----------|-----------------|-----------------------|-----------------|----------|-----------------|-------------|
 |Batch Norm + FC + Transition + GAP|9320|None|None|64|99.17|99.28|
 |Batch Norm + FC + Transition + GAP|9320|StepLR|None|64|99.47|99.3|
-|Batch Norm + FC + Transition + GAP|9320|ReduceLROnPlateau|None|64|99.37|99.43|
+|Batch Norm + FC + Transition + GAP|9320|ReduceLROnPlateau|None|64|99.37|**99.43**|
 |Batch Norm + FC + Transition + GAP|9320|None|Rotation + Affine + Color Jitter|64|98.46|99.32|
 |Batch Norm + FC + Transition + GAP|9320|StepLR|Rotation + Affine + Color Jitter|64|98.75|**99.48**|
 |Batch Norm + FC + Transition + GAP|9320|ReduceLROnPlateau|Rotation + Affine + Color Jitter|64|98.35|99.35|
@@ -153,3 +153,12 @@ Trained with 2 different batch size, 3 different types of learning rates, 2 diff
 |Batch Norm + Transition + GAP|9210|ReduceLROnPlateau|Rotation + Affine + Color Jitter|128|98.42|99.36|
 
 ## Results observed
+
+We tried with 6 different architectures to train 60 different models. We observed the best result of 99.54% validation accuracy when we trained the model with batch size of 64, along with StepLR and Data Augmentation of Rotation, Affine Transformation and Color Jitter and considered Batch Normalization, GAP, Dropout and Transition. This model didn't have a Fully Connected layer. The following are the reasons why we think that we achieved the best accuracy using this network:
+
+1. With 64 batch size, the number of back propagations that are executed is high. This helps the model learn faster. 
+2. With Data Augmentation, it helps in improving the data diversity.
+3. With using a Learning Scheduler like Step Learning Rate and Reduce Learning Rate on Plateau, it helps in reaching the global minima rather than skipping over the global minima.
+
+Even though the best output that we saw was without using a Fully Connected layer, we were successful in achieving a validation accuracy greater than 99.4 with network including Fully Connected layer. These were achieved with training networks having batch size of 64. We observed that, whenever we used data augmentation or some kind of Learning Rate schedulers, we achieved the target. So the importance goes towards understanding how using Learning Rate Scheduler and data augmentation affects the training a model. Hence the next steps we want to focus towards is to discover how these hyper parameters affect training a model.
+ 
