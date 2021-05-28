@@ -68,7 +68,8 @@ Network GAP and Transition Layer without FC: **Model parameters**
 
 ## Training the models
 
-Vanilla Network is trained with 2 different batch size, 3 different types of learning rates, 2 different data augmentation.
+### Vanilla Network
+Trained with 2 different batch size, 3 different types of learning rates, 2 different data augmentation.
 
 |Model Name|No. of Parameters|Learning Rate Scheduler|Data Augmentation|Batch Size|Training Accuracy|Test Accuracy|
 |----------|-----------------|-----------------------|-----------------|----------|-----------------|-------------|
@@ -85,7 +86,8 @@ Vanilla Network is trained with 2 different batch size, 3 different types of lea
 |Batch Norm + FC + GAP|9186|StepLR|Rotation + Affine + Color Jitter|128|98.41|99.37|
 |Batch Norm + FC + GAP|9186|ReduceLROnPlateau|Rotation + Affine + Color Jitter|128|98.41|99.3|
 
-Network with dropout is trained with 2 different batch size, 3 different types of learning rates, 2 different data augmentation.
+### Network with dropout 
+Trained with 2 different batch size, 3 different types of learning rates, 2 different data augmentation.
 
 |Model Name|No. of Parameters|Learning Rate Scheduler|Data Augmentation|Batch Size|Training Accuracy|Test Accuracy|
 |----------|-----------------|-----------------------|-----------------|----------|-----------------|-------------|
@@ -102,7 +104,8 @@ Network with dropout is trained with 2 different batch size, 3 different types o
 |Batch Norm + FC + Dropout + GAP|9178|StepLR|Rotation + Affine + Color Jitter|128|98.49|99.35|
 |Batch Norm + FC + Dropout + GAP|9178|ReduceLROnPlateau|Rotation + Affine + Color Jitter|128|98.05|99.31|
 
-Network with GAP and transition layer is trained with 2 different batch size, 3 different types of learning rates, 2 different data augmentation.
+### Network with GAP and transition layer + FC 
+Trained with 2 different batch size, 3 different types of learning rates, 2 different data augmentation.
 
 |Model Name|No. of Parameters|Learning Rate Scheduler|Data Augmentation|Batch Size|Training Accuracy|Test Accuracy|
 |----------|-----------------|-----------------------|-----------------|----------|-----------------|-------------|
@@ -119,7 +122,9 @@ Network with GAP and transition layer is trained with 2 different batch size, 3 
 |Batch Norm + FC + Transition + GAP|9320|StepLR|Rotation + Affine + Color Jitter|128|98.69|99.36|
 |Batch Norm + FC + Transition + GAP|9320|ReduceLROnPlateau|Rotation + Affine + Color Jitter|128|98.14|99.14|
 
-Network with GAP and transition layer without FC is trained with 2 different batch size, 3 different types of learning rates, 2 different data augmentation.
+
+### Network with GAP and transition layer without FC
+Trained with 2 different batch size, 3 different types of learning rates, 2 different data augmentation.
 
 |Model Name|No. of Parameters|Learning Rate Scheduler|Data Augmentation|Batch Size|Training Accuracy|Test Accuracy|
 |----------|-----------------|-----------------------|-----------------|----------|-----------------|-------------|
