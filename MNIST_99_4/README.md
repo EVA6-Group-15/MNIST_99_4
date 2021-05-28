@@ -158,7 +158,7 @@ Trained with 2 different batch size, 3 different types of learning rates, 2 diff
 Trained with 2 different LR schedulers and no LR scheduler along with different Data Augmentations.
 
 |Model Name| No. Parameters| Scheduler| Data Aug|Batch Size|Train Accuracy| Test Accuracy| 
-|:---:|:------------------:|:---:|:---:|:---:|:---:|
+|:--------:|:-------------:|:--------:|:-------:|:--------:|:------------:|:------------:|
 |Batch Norm + GAP + FC|6,290|N/A|Normalize|64|99.53|99.14|    
 |Batch Norm + GAP + FC + DropOut|6,290|N/A|Normalize|64|99.195|99.28|
 |------|------|------|------|------|------|
@@ -175,6 +175,7 @@ Trained with 2 different LR schedulers and no LR scheduler along with different 
 
 ### Network with GAP and transition layer - (1 Max Pools & GAP at 6x6)
 |Model Name| No. Parameters| Scheduler| Data Aug|Batch Size|Train Accuracy| Test Accuracy |
+|:--------:|:-------------:|:--------:|:-------:|:--------:|:------------:|:------------:|
 |One MP + Batch Norm + GAP + FC|6,290|StepLR|Normalize + RandomRotate|64|99.12|**99.4**|
 |One MP + Batch Norm + GAP + FC + DropOut|6,290|StepLR|Normalize + RandomRotate|64|98.9|**99.4**|
 |------|------|------|------|------|------|
