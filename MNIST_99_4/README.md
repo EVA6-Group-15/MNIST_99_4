@@ -154,29 +154,32 @@ Trained with 2 different batch size, 3 different types of learning rates, 2 diff
 
 
 ### Network with GAP and transition layer - (2 Max Pools & GAP at 3x3)
-Model Name| No. Parameters| Scheduler| Data Aug|Batch Size|Train Accuracy| Test Accuracy 
-:---:|:------------------:|:---:|:---:|:---:|:---:
-Batch Norm + GAP + FC|6,290|N/A|Normalize|64|99.53|99.14    
-Batch Norm + GAP + FC + DropOut|6,290|N/A|Normalize|64|99.195|99.28
-------|------|------|------|------|------
-Batch Norm + GAP + FC|6,290|N/A|Normalize + RandomRotate |64|99.105|**99.4**
-Batch Norm + GAP + FC + DropOut|6,290|N/A|Normalize + RandomRotate|64|98.76|99.36    
-------|------|------|------|------|------
-Batch Norm + GAP + FC|6,290|StepLR|Normalize + RandomRotate|64|99.26|99.35
-Batch Norm + GAP + FC + DropOut|6,290|StepLR|Normalize + RandomRotate|64|98.89|99.24
-------|------|------|------|------|------
-Batch Norm + GAP + FC|6,290|ReduceLROnPlateau|Normalize + RandomRotate|64|99.28|99.37
-Batch Norm + GAP + FC + DropOut|6,290|ReduceLROnPlateau|Normalize + RandomRotate|64|99.975|**99.42**
+
+Trained with 2 different LR schedulers and no LR scheduler along with different Data Augmentations.
+
+|Model Name| No. Parameters| Scheduler| Data Aug|Batch Size|Train Accuracy| Test Accuracy| 
+|:---:|:------------------:|:---:|:---:|:---:|:---:|
+|Batch Norm + GAP + FC|6,290|N/A|Normalize|64|99.53|99.14|    
+|Batch Norm + GAP + FC + DropOut|6,290|N/A|Normalize|64|99.195|99.28|
+|------|------|------|------|------|------|
+|Batch Norm + GAP + FC|6,290|N/A|Normalize + RandomRotate |64|99.105|**99.4**|
+|Batch Norm + GAP + FC + DropOut|6,290|N/A|Normalize + RandomRotate|64|98.76|99.36| 
+|------|------|------|------|------|------|
+|Batch Norm + GAP + FC|6,290|StepLR|Normalize + RandomRotate|64|99.26|99.35|
+|Batch Norm + GAP + FC + DropOut|6,290|StepLR|Normalize + RandomRotate|64|98.89|99.24
+|------|------|------|------|------|------|
+|Batch Norm + GAP + FC|6,290|ReduceLROnPlateau|Normalize + RandomRotate|64|99.28|99.37|
+|Batch Norm + GAP + FC + DropOut|6,290|ReduceLROnPlateau|Normalize + RandomRotate|64|99.975|**99.42**|
 
 
 
 ### Network with GAP and transition layer - (1 Max Pools & GAP at 6x6)
-Model Name| No. Parameters| Scheduler| Data Aug|Batch Size|Train Accuracy| Test Accuracy 
-One MP + Batch Norm + GAP + FC|6,290|StepLR|Normalize + RandomRotate|64|99.12|**99.4**
-One MP + Batch Norm + GAP + FC + DropOut|6,290|StepLR|Normalize + RandomRotate|64|98.9|**99.4**
-------|------|------|------|------|------
-One MP + Batch Norm + GAP + FC|6,290|ReduceLROnPlateau|Normalize + RandomRotate|64|99.23|**99.47**
-One MP + Batch Norm + GAP + FC + DropOut|6,290|ReduceLROnPlateau|Normalize + RandomRotate|64|98.96|99.36
+|Model Name| No. Parameters| Scheduler| Data Aug|Batch Size|Train Accuracy| Test Accuracy |
+|One MP + Batch Norm + GAP + FC|6,290|StepLR|Normalize + RandomRotate|64|99.12|**99.4**|
+|One MP + Batch Norm + GAP + FC + DropOut|6,290|StepLR|Normalize + RandomRotate|64|98.9|**99.4**|
+|------|------|------|------|------|------|
+|One MP + Batch Norm + GAP + FC|6,290|ReduceLROnPlateau|Normalize + RandomRotate|64|99.23|**99.47**|
+|One MP + Batch Norm + GAP + FC + DropOut|6,290|ReduceLROnPlateau|Normalize + RandomRotate|64|98.96|99.36|
 
 ## Results observed
 
