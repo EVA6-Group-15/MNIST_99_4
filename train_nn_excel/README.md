@@ -12,19 +12,27 @@ During feed forward, we modify the value of the neurons based on the input value
 
 # Input -> Layer-1
 h1=w1*i1+w2*i2
+
 h2=w3*i1+w4*i2
+
 out_h1=σ(h1)=1/(1+e^-h1)
+
 out_h2=σ(h2)=1/(1+e^-h2)
 
 # Layer-1 -> Layer-2
 o1=w5*out_h1+w6*out_h2
+
 o2=w7*out_h1+w8*out_h2
+
 out_o1=σ(o1)=1/(1+e^-o1)
+
 out_o2=σ(o2)=1/(1+e^-o2)
 
 # Layer-2 -> Error/Loss (MSE Loss)
 E_total=E1+E2
+
 E1=1/2*(t1-out_o1)^2
+
 E2=1/2*(t2-out_o2)^2
 
 ## Backward Propagation
