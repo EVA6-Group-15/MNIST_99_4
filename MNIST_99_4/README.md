@@ -68,6 +68,57 @@ Network GAP and Transition Layer without FC: **Model parameters**
 
 ## Training the models
 
+|Model Name|No. of Parameters|Learning Rate Scheduler|Data Augmentation|Batch Size|Training Accuracy|Test Accuracy|
+|----------|-----------------|-----------------------|-----------------|----------|-----------------|-------------|
+|Batch Norm + FC + GAP|9,186|None|None|64|||
+|Batch Norm + FC + Dropout + GAP|9,178|None|None|64|||
+|Batch Norm + FC + Transition + GAP|9,320|None|None|64|||
+|Batch Norm + Transition + GAP|9,210|None|None|64|||
+|Batch Norm + FC + GAP|9,186|StepLR|None|64|||
+|Batch Norm + FC + Dropout + GAP|9,178|StepLR|None|64|||
+|Batch Norm + FC + Transition + GAP|9,320|StepLR|None|64|||
+|Batch Norm + Transition + GAP|9,210|StepLR|None|64|||
+|Batch Norm + FC + GAP|9,186|ReduceLROnPlateau|None|64|||
+|Batch Norm + FC + Dropout + GAP|9,178|ReduceLROnPlateau|None|64|||
+|Batch Norm + FC + Transition + GAP|9,320|ReduceLROnPlateau|None|64|||
+|Batch Norm + Transition + GAP|9,210|ReduceLROnPlateau|None|64|||
+|Batch Norm + FC + GAP|9,186|None|Rotation + Affine + Color Jitter|64|||
+|Batch Norm + FC + Dropout + GAP|9,178|None|Rotation + Affine + Color Jitter|64|||
+|Batch Norm + FC + Transition + GAP|9,320|None|Rotation + Affine + Color Jitter|64|||
+|Batch Norm + Transition + GAP|9,210|None|Rotation + Affine + Color Jitter|64|||
+|Batch Norm + FC + GAP|9,186|StepLR|Rotation + Affine + Color Jitter|64|||
+|Batch Norm + FC + Dropout + GAP|9,178|StepLR|Rotation + Affine + Color Jitter|64|||
+|Batch Norm + FC + Transition + GAP|9,320|StepLR|Rotation + Affine + Color Jitter|64|||
+|Batch Norm + Transition + GAP|9,210|StepLR|Rotation + Affine + Color Jitter|64|||
+|Batch Norm + FC + GAP|9,186|ReduceLROnPlateau|Rotation + Affine + Color Jitter|64|||
+|Batch Norm + FC + Dropout + GAP|9,178|ReduceLROnPlateau|Rotation + Affine + Color Jitter|64|||
+|Batch Norm + FC + Transition + GAP|9,320|ReduceLROnPlateau|Rotation + Affine + Color Jitter|64|||
+|Batch Norm + Transition + GAP|9,210|ReduceLROnPlateau|Rotation + Affine + Color Jitter|64|||
+|Batch Norm + FC + GAP|9,186|None|None|128|||
+|Batch Norm + FC + Dropout + GAP|9,178|None|None|128|||
+|Batch Norm + FC + Transition + GAP|9,320|None|None|128|||
+|Batch Norm + Transition + GAP|9,210|None|None|128|||
+|Batch Norm + FC + GAP|9,186|StepLR|None|128|||
+|Batch Norm + FC + Dropout + GAP|9,178|StepLR|None|128|||
+|Batch Norm + FC + Transition + GAP|9,320|StepLR|None|128|||
+|Batch Norm + Transition + GAP|9,210|StepLR|None|128|||
+|Batch Norm + FC + GAP|9,186|ReduceLROnPlateau|None|128|||
+|Batch Norm + FC + Dropout + GAP|9,178|ReduceLROnPlateau|None|128|||
+|Batch Norm + FC + Transition + GAP|9,320|ReduceLROnPlateau|None|128|||
+|Batch Norm + Transition + GAP|9,210|ReduceLROnPlateau|None|128|||
+|Batch Norm + FC + GAP|9,186|None|Rotation + Affine + Color Jitter|128|||
+|Batch Norm + FC + Dropout + GAP|9,178|None|Rotation + Affine + Color Jitter|128|||
+|Batch Norm + FC + Transition + GAP|9,320|None|Rotation + Affine + Color Jitter|128|||
+|Batch Norm + Transition + GAP|9,210|None|Rotation + Affine + Color Jitter|128|||
+|Batch Norm + FC + GAP|9,186|StepLR|Rotation + Affine + Color Jitter|128|||
+|Batch Norm + FC + Dropout + GAP|9,178|StepLR|Rotation + Affine + Color Jitter|128|||
+|Batch Norm + FC + Transition + GAP|9,320|StepLR|Rotation + Affine + Color Jitter|128|||
+|Batch Norm + Transition + GAP|9,210|StepLR|Rotation + Affine + Color Jitter|128|||
+|Batch Norm + FC + GAP|9,186|ReduceLROnPlateau|Rotation + Affine + Color Jitter|128|||
+|Batch Norm + FC + Dropout + GAP|9,178|ReduceLROnPlateau|Rotation + Affine + Color Jitter|128|||
+|Batch Norm + FC + Transition + GAP|9,320|ReduceLROnPlateau|Rotation + Affine + Color Jitter|128|||
+|Batch Norm + Transition + GAP|9,210|ReduceLROnPlateau|Rotation + Affine + Color Jitter|128|||
+
 ## Results observed
 
 ## Our Findings
