@@ -10,7 +10,7 @@ View the notebooks:
 
 1. [Multiple Model - Notebook 1](https://colab.research.google.com/drive/14hxzm69jwB4IJEs5CJsVQteCtp7BtqJ7?usp=sharing)
 2. [Multiple Model - Notebook 2](https://colab.research.google.com/drive/1Od4xQPigRzRkHGjwTnoJHhlp4BTCZ65q?usp=sharing)
-3. [Final Notebook](https://colab.research.google.com/drive/1fHDkcUkhyXATQ48k6vQrXqT2e2-fQ28N?usp=sharing)
+3. [Final Notebook](https://colab.research.google.com/drive/196DJiXjRT95pU0dlwvH2X5Ynlie0oriZ?usp=sharing)
 
 Below we have explained in detail on how we achieved the goal and what was our findings as much detailed possible for us.
 
@@ -210,11 +210,10 @@ Trained with 2 different LR schedulers and no LR scheduler along with different 
 
 ## Results observed
 
-We tried with 6 different architectures to train 60 different models. We observed the best result of 99.57% validation accuracy when we trained the model with batch size of 64, along with StepLR and Data Augmentation of Rotation, Affine Transformation and Color Jitter and considered Batch Normalization, GAP, Dropout, Transition and a Fully Connected Layer. The following are the reasons why we think that we achieved the best accuracy using this network:
+We tried with 6 different architectures to train 60 different models. We observed the best result of 99.57% validation accuracy when we trained the model with batch size of 64, along with StepLR and Data Augmentation of Rotation, Affine Transformation and Color Jitter and considered Batch Normalization, GAP, Dropout, Transition and a Fully Connected Layer ([Final Notebook](https://colab.research.google.com/drive/196DJiXjRT95pU0dlwvH2X5Ynlie0oriZ?usp=sharing)). The following are the reasons why we think that we achieved the best accuracy using this network:
 
-1. With 64 batch size, the number of back propagations that are executed is high. This helps the model learn faster. 
+1. With 64 batch size, the number of back propagations that are executed is high. This helps the model learn faster.
 2. With Data Augmentation, it helps in improving the data diversity.
 3. With using a Learning Scheduler like Step Learning Rate and Reduce Learning Rate on Plateau, it helps in reaching the global minima rather than skipping over the global minima.
 
 Even though the best output that we saw was without using a (GAP+)Fully Connected layer, we were successful in achieving a validation accuracy greater than 99.4 with network including Fully Connected layer. These were achieved with training networks having batch size of 64. We observed that, whenever we used data augmentation or some kind of Learning Rate schedulers, we achieved the target. So the importance goes towards understanding how using Learning Rate Scheduler and data augmentation affects the training a model. Hence the next steps we want to focus towards is to discover how these hyper parameters affect training a model.
- 
