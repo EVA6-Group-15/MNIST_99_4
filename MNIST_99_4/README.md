@@ -1,18 +1,28 @@
-# Train models on MNIST Dataset to achieve 99.4 validation accuracy
+# Comprehensive Study on Training Neural Nets to Acheive 99.4%+ Accuracy on Number Recognition(MNIST)
 
 ## Goal To achieve
 
-The activity that was performed using MNIST data was to achieve a validation accuracy of atleast 99.4% within 20 epochs of training the model and ensuring the number of parameters are less than 20,000. The purpose of this activity was to understand how we can consider different types of network architectures, considering different loss functions can help us achieve the desired result.
+The activity that was performed using MNIST data was to achieve a validation accuracy of atleast **99.4%** within **20 epochs** of training the model and ensuring the number of **parameters are less than 20,000**. The purpose of this activity was to understand how we can consider different types of network architectures, considering different loss functions can help us achieve the desired result.
+
+### Terminology:
+**Accuracy**: Just like the score we get after our exam, Accuracy is the score of our Model. It's simply how many correct answers our model gave by total number of questions. Here, we are trying to get an Accuracy(score) of **99.4%**, so when our Model gets 10,000 questions(images), we want our model to answer atleast 9,940 questions(images) correctly.
+
+*Note: The term Validation Accuracy, is nothing but we want our model to predict the number on the image from the unseen data. We gave 60,000 Images to our model, to learn from those, and we check how it's learning by seeing the Training Accuracy, but having high percentage in Training Accuracy doesn't mean that it will perform good when given unseen data, becuase it may have rememberd all the 60,000 Images and may be good only on those 60,000 Images.  
+So, to avoid that, we keep 10,000 Images separately and doesn't show the model those images until it's time to test. So we want better Validation Accuracy and the goal is to acheive 99.4% Validation accuracy rather than Trainig Accuracy.*
+
+**epochs**: When the model goes through the entire dataset once, it is called 1 epoch. The model to learn better, we have to show the model the images multiple times. Here, we are trying to acheive our goal under 20 epochs, so the model gets to see all the 60,000 images 19 times.
+
+**Parameters**: These are the most important part of our model, indeed these are itself the model. Our model is made up of these parameters. The parameters are numbers which get multiplied with the Image and gives an output. When we train our model, all we are doing is identifying this parameters values, such that when the image is multiplied with this values, the final result is the label of the image.
 
 ## Implementation - link to Colab notebooks
 
 View the notebooks:
 
-1. [Multiple Model - Notebook 1](https://colab.research.google.com/drive/14hxzm69jwB4IJEs5CJsVQteCtp7BtqJ7?usp=sharing)
-2. [Multiple Model - Notebook 2](https://colab.research.google.com/drive/1Od4xQPigRzRkHGjwTnoJHhlp4BTCZ65q?usp=sharing)
-3. [Final Notebook](https://colab.research.google.com/drive/1fHDkcUkhyXATQ48k6vQrXqT2e2-fQ28N?usp=sharing)
+1. [Multiple Model - Notebook 1](https://colab.research.google.com/drive/14hxzm69jwB4IJEs5CJsVQteCtp7BtqJ7?usp=sharing) - Trained 48 Models
+2. [Multiple Model - Notebook 2](https://colab.research.google.com/drive/1Od4xQPigRzRkHGjwTnoJHhlp4BTCZ65q?usp=sharing) - Trained 12 Models 
+3. [Final Notebook](https://colab.research.google.com/drive/1fHDkcUkhyXATQ48k6vQrXqT2e2-fQ28N?usp=sharing) - The Best Model out of 60!
 
-Below we have explained in detail on how we achieved the goal and what was our findings as much detailed possible for us.
+Below we have explained in detail on how we achieved the goal and what was our findings.
 
 ## Network Architectures Used
 
@@ -216,5 +226,5 @@ We tried with 6 different architectures to train 60 different models. We observe
 2. With Data Augmentation, it helps in improving the data diversity.
 3. With using a Learning Scheduler like Step Learning Rate and Reduce Learning Rate on Plateau, it helps in reaching the global minima rather than skipping over the global minima.
 
-Even though the best output that we saw was without using a (GAP+)Fully Connected layer, we were successful in achieving a validation accuracy greater than 99.4 with network including Fully Connected layer. These were achieved with training networks having batch size of 64. We observed that, whenever we used data augmentation or some kind of Learning Rate schedulers, we achieved the target. So the importance goes towards understanding how using Learning Rate Scheduler and data augmentation affects the training a model. Hence the next steps we want to focus towards is to discover how these hyper parameters affect training a model.
+We were successful in achieving a validation accuracy greater than 99.4 with network including Fully Connected layer. These were achieved with training networks having batch size of 64. We observed that, whenever we used data augmentation or some kind of Learning Rate schedulers, we achieved the target. So the importance goes towards understanding how using Learning Rate Scheduler and data augmentation affects the training a model. Hence the next steps we want to focus towards is to discover how these hyper parameters affect training a model.
  
